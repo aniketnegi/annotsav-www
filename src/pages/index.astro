@@ -1,5 +1,14 @@
 ---
+import "@fontsource-variable/nunito";
+import "@fontsource-variable/montserrat";
+import "@fontsource/roboto/500.css";
 
+import { Image } from "astro:assets";
+import logo from "../imgs/logo.png";
+import automation from "../imgs/automation.png";
+import irrigation from "../imgs/irrigation.png";
+import monitoring from "../imgs/monitoring.png";
+import flowchart from "../imgs/flowchart.png";
 ---
 
 <html lang="en">
@@ -10,7 +19,157 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-[#E9E9E9]">
+		<header>
+			<nav>
+				<div>
+					<span> PROJECT ANNOTSAV </span>
+					<span> Let technology nourish the soil </span>
+				</div>
+				<Image alt="Enactus Logo" src={logo} height={76} width={136} />
+
+				<ul>
+					<li>
+						<a href="#about">About Us</a>
+					</li>
+					<li>
+						<a href="#team">Team</a>
+					</li>
+					<li>
+						<a href="#contact">Contact Us</a>
+					</li>
+				</ul>
+
+				<div>
+					<button class="">
+						<p>REQUEST DEMO</p>
+					</button>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="h-[34rem] w-[88rem] bg-white">
+				TODO: Carousel (React or JS?)
+			</div>
+
+			<div>
+				<div>
+					<Image alt="Automation Illustration" src={automation} />
+					<span>Automation</span>
+					<p>
+						Automate the process of watering the plants by using
+						weather forecasts and making predictions using
+						pre-trained ML models
+					</p>
+				</div>
+				<div>
+					<Image alt="Monitoring Illustration" src={monitoring} />
+					<span>Remote Monitoring</span>
+					<p>
+						Using advanced technology you can control watering of
+						plants remotely from anywhere
+					</p>
+				</div>
+				<div>
+					<Image alt="Irrigation Illustration" src={irrigation} />
+					<span>Precise Irrigation</span>
+					<p>
+						Precisely control the amount of water that is to be
+						given to plants
+					</p>
+				</div>
+			</div>
+
+			<section>
+				<h2>How (PRODUCT NAME) Works</h2>
+				<Image src={flowchart} alt="Flowchart of product function" />
+				<div>
+					<h3>TOPIC OF INTEREST 01</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipiscing elit
+						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
+						sit amet sapien fringilla, mattis ligula consectetur,
+						ultrices mauris. Maecenas vitae mattis tellus. Nullam
+						quis imperdiet augue.
+					</p>
+					<h3>TOPIC OF INTEREST 02</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipiscing elit
+						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
+						sit amet sapien fringilla, mattis ligula consectetur,
+						ultrices mauris. Maecenas vitae mattis tellus. Nullam
+						quis imperdiet augue.
+					</p>
+					<h3>TOPIC OF INTEREST 03</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipiscing elit
+						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
+						sit amet sapien fringilla, mattis ligula consectetur,
+						ultrices mauris. Maecenas vitae mattis tellus. Nullam
+						quis imperdiet augue.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2>Team</h2>
+				<!-- Member Component -->
+				<div>
+					<Image
+						src="https://xsgames.co/randomusers/avatar.php?g=male"
+						alt="Team member photo"
+						width={128}
+						height={128}
+					/>
+					<span> John Doe </span>
+				</div>
+			</section>
+
+			<section>
+				<h2>Contact Us</h2>
+				<form>
+					<div>
+						<label for="name">Name</label>
+						<input
+							type="text"
+							name="name"
+							id="name"
+							placeholder="John Doe"
+						/>
+
+						<label for="email">Email ID</label>
+						<input
+							type="text"
+							name="email"
+							id="email"
+							placeholder="johndoe@email.com"
+						/>
+
+						<label for="phone">Phone Number</label>
+						<input
+							type="text"
+							name="phone"
+							id="phone"
+							placeholder="9087654321"
+						/>
+					</div>
+					<div>
+						<label for="message">Message</label>
+						<textarea
+							name="message"
+							id="message"
+							placeholder="Send us a beautiful message!"
+						></textarea>
+					</div>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			<div>
+				<span> PROJECT ANNOTSAV </span>
+				<span> Designed and developed with ❤️ at NSUT </span>
+			</div>
+			<Image alt="Enactus Logo" src={logo} height={76} width={136} />
+		</footer>
 	</body>
 </html>

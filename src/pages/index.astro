@@ -1,7 +1,10 @@
 ---
+import "../styles/normalise.css";
+
 import "@fontsource-variable/nunito";
 import "@fontsource-variable/montserrat";
 import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/400.css";
 
 import { Image } from "astro:assets";
 import logo from "../imgs/logo.png";
@@ -19,21 +22,33 @@ import flowchart from "../imgs/flowchart.png";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="bg-[#E9E9E9]">
-		<header>
-			<nav>
-				<div>
-					<span> PROJECT ANNOTSAV </span>
-					<span> Let technology nourish the soil </span>
+	<body class="flex flex-col justify-center min-h-screen mx-20">
+		<header class="my-8">
+			<nav class="flex flex-row justify-between items-center">
+				<div class="flex flex-col">
+					<span class="mb-2" id="title">
+						PROJECT <br /> ANNOTSAV
+					</span>
+					<span id="subtitle-header">
+						Let technology nourish the soil
+					</span>
 				</div>
-				<Image alt="Enactus Logo" src={logo} height={76} width={136} />
+				<Image alt="Enactus Logo" src={logo} height={96}/>
 
-				<ul>
+				<ul
+					class="flex flex-row justify-between items-center space-x-8"
+				>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="#working">Features</a>
+					</li>
 					<li>
 						<a href="#about">About Us</a>
 					</li>
 					<li>
-						<a href="#team">Team</a>
+						<a href="#faq">FAQ</a>
 					</li>
 					<li>
 						<a href="#contact">Contact Us</a>
@@ -41,135 +56,310 @@ import flowchart from "../imgs/flowchart.png";
 				</ul>
 
 				<div>
-					<button class="">
-						<p>REQUEST DEMO</p>
+					<button
+						class="text-[#2d6a4f] border-solid border-[#2D6A4F] rounded border-2 px-2.5 py-3 hover:bg-[#2D6A4F] hover:text-[#E9E9E9]"
+					>
+						REQUEST DEMO
 					</button>
 				</div>
 			</nav>
 		</header>
 		<main>
-			<div class="h-[34rem] w-[88rem] bg-white">
+			<div class="h-[555px] w-full bg-white my-4">
 				TODO: Carousel (React or JS?)
 			</div>
 
-			<div>
-				<div>
-					<Image alt="Automation Illustration" src={automation} />
-					<span>Automation</span>
-					<p>
+			<div class="flex flex-row my-16 mx-40 space-x-8">
+				<div class="flex flex-col justify-between items-center m">
+					<Image
+						class="mb-4"
+						alt="Automation Illustration"
+						src={automation}
+					/>
+					<span class="mb-2" id="solution-title">Automation</span>
+					<p id="solution-desc">
 						Automate the process of watering the plants by using
 						weather forecasts and making predictions using
 						pre-trained ML models
 					</p>
 				</div>
-				<div>
+				<div class="flex flex-col justify-between items-center">
 					<Image alt="Monitoring Illustration" src={monitoring} />
-					<span>Remote Monitoring</span>
-					<p>
+					<span class="mb-2" id="solution-title"
+						>Remote Monitoring</span
+					>
+					<p id="solution-desc">
 						Using advanced technology you can control watering of
 						plants remotely from anywhere
 					</p>
 				</div>
-				<div>
+				<div class="flex flex-col justify-between items-center m">
 					<Image alt="Irrigation Illustration" src={irrigation} />
-					<span>Precise Irrigation</span>
-					<p>
+					<span class="mb-2" id="solution-title"
+						>Precise Irrigation</span
+					>
+					<p id="solution-desc">
 						Precisely control the amount of water that is to be
 						given to plants
 					</p>
 				</div>
 			</div>
 
-			<section>
-				<h2>How (PRODUCT NAME) Works</h2>
-				<Image src={flowchart} alt="Flowchart of product function" />
-				<div>
-					<h3>TOPIC OF INTEREST 01</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipiscing elit
-						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-						sit amet sapien fringilla, mattis ligula consectetur,
-						ultrices mauris. Maecenas vitae mattis tellus. Nullam
-						quis imperdiet augue.
-					</p>
-					<h3>TOPIC OF INTEREST 02</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipiscing elit
-						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-						sit amet sapien fringilla, mattis ligula consectetur,
-						ultrices mauris. Maecenas vitae mattis tellus. Nullam
-						quis imperdiet augue.
-					</p>
-					<h3>TOPIC OF INTEREST 03</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipiscing elit
-						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-						sit amet sapien fringilla, mattis ligula consectetur,
-						ultrices mauris. Maecenas vitae mattis tellus. Nullam
-						quis imperdiet augue.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2>Team</h2>
-				<!-- Member Component -->
-				<div>
+			<section
+				class="flex flex-col my-16 justify-start"
+				id="section-working"
+			>
+				<h2 id="working">How (PRODUCT NAME) Works</h2>
+				<div class="flex flex-row items-start mt-12 space-x-8">
 					<Image
-						src="https://xsgames.co/randomusers/avatar.php?g=male"
-						alt="Team member photo"
-						width={128}
-						height={128}
+						src={flowchart}
+						alt="Flowchart of product function"
 					/>
-					<span> John Doe </span>
+					<div class="flex flex-col space-y-6 justify-start">
+						<div class="space-y-1">
+							<h3>TOPIC OF INTEREST 01</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipiscing elit Ut et massa mi. Aliquam in
+								hendrerit urna. Pellentesque sit amet sapien
+								fringilla, mattis ligula consectetur, ultrices
+								mauris. Maecenas vitae mattis tellus. Nullam
+								quis imperdiet augue.
+							</p>
+						</div>
+						<div class="space-y-1">
+							<h3>TOPIC OF INTEREST 01</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipiscing elit Ut et massa mi. Aliquam in
+								hendrerit urna. Pellentesque sit amet sapien
+								fringilla, mattis ligula consectetur, ultrices
+								mauris. Maecenas vitae mattis tellus. Nullam
+								quis imperdiet augue.
+							</p>
+						</div>
+						<div class="space-y-1">
+							<h3>TOPIC OF INTEREST 01</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipiscing elit Ut et massa mi. Aliquam in
+								hendrerit urna. Pellentesque sit amet sapien
+								fringilla, mattis ligula consectetur, ultrices
+								mauris. Maecenas vitae mattis tellus. Nullam
+								quis imperdiet augue.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="my-16" id="section-team">
+				<h2 id="about">About Us</h2>
+				<div class="mx-12 flex flex-wrap flex-row justify-between mt-8">
+					<div class="flex flex-col items-center space-y-4">
+						<!-- Member Component -->
+						<Image
+							src="https://xsgames.co/randomusers/avatar.php?g=male"
+							alt="Team member photo"
+							width={128}
+							height={128}
+						/>
+						<span id="member-name"> John Doe </span>
+					</div>
 				</div>
 			</section>
 
-			<section>
-				<h2>Contact Us</h2>
-				<form>
+			<section class="my-16" id="section-contact">
+				<h2 class="mb-12" id="contact">Contact Us</h2>
+				<div class="flex flex-row justify-between items-center mx-40">
 					<div>
-						<label for="name">Name</label>
-						<input
-							type="text"
-							name="name"
-							id="name"
-							placeholder="John Doe"
-						/>
-
-						<label for="email">Email ID</label>
-						<input
-							type="text"
-							name="email"
-							id="email"
-							placeholder="johndoe@email.com"
-						/>
-
-						<label for="phone">Phone Number</label>
-						<input
-							type="text"
-							name="phone"
-							id="phone"
-							placeholder="9087654321"
-						/>
+						<h2>FIND US AT</h2>
+						<p>
+							Netaji Subhas University of Technology, Dwarka
+							Sector-3, Dwarka, Delhi, 110078
+						</p>
 					</div>
-					<div>
-						<label for="message">Message</label>
-						<textarea
-							name="message"
-							id="message"
-							placeholder="Send us a beautiful message!"
-						></textarea>
-					</div>
-				</form>
+					<form class="flex flex-row space-x-8 ml-16">
+						<div class="flex flex-col space-y-8">
+							<div class="flex flex-col space-y-2 items-start">
+								<label class="" for="name">Name</label>
+								<input
+									type="text"
+									name="name"
+									id="name"
+									placeholder="John Doe"
+								/>
+							</div>
+
+							<div class="flex flex-col space-y-2 items-start">
+								<label for="email">Email ID</label>
+								<input
+									type="text"
+									name="email"
+									id="email"
+									placeholder="johndoe@email.com"
+								/>
+							</div>
+
+							<div class="flex flex-col space-y-2 items-start">
+								<label for="phone">Phone Number</label>
+								<input
+									type="text"
+									name="phone"
+									id="phone"
+									placeholder="9087654321"
+								/>
+							</div>
+						</div>
+						<div class="flex flex-col space-y-2 items-start">
+							<label for="message">Message</label>
+							<textarea
+								name="message"
+								id="message"
+								placeholder="Send us a beautiful message!"
+								rows="8"
+								cols="100"></textarea>
+						</div>
+					</form>
+				</div>
 			</section>
 		</main>
 
-		<footer>
-			<div>
-				<span> PROJECT ANNOTSAV </span>
-				<span> Designed and developed with ❤️ at NSUT </span>
+		<footer class="flex flex-row justify-between items-start mb-8 mt-4">
+			<div class="flex flex-col items-start space-y-2">
+				<span id="title"> PROJECT<br />ANNOTSAV </span>
+				<span id="subtitle-footer">
+					Designed and developed with ❤️ at NSUT
+				</span>
 			</div>
-			<Image alt="Enactus Logo" src={logo} height={76} width={136} />
+			<Image alt="Enactus Logo" src={logo} width={150}/>
 		</footer>
 	</body>
 </html>
+
+<style>
+	body {
+		background-color: #e9e9e9;
+	}
+	span#title {
+		color: #1f2421;
+		font-family: "Montserrat Variable", "Verdana", sans-serif;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: -0.06rem;
+	}
+	span#subtitle-header {
+		color: #bc6c25;
+		font-family: "Montserrat Variable", "Verdana", sans-serif;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: -0.00875rem;
+		text-transform: capitalize;
+	}
+	nav ul li {
+		color: #1f2421;
+		font-family: "Montserrat Variable", "Verdana", sans-serif;
+		font-size: 1.25rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.045rem;
+	}
+	button {
+		font-family: "Montserrat Variable", "Verdana", sans-serif;
+		font-size: 1.25rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: -0.015rem;
+		text-transform: uppercase;
+	}
+	span#solution-title {
+		text-align: center;
+		font-family: "Roboto", sans-serif;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.04rem;
+	}
+	p#solution-desc {
+		text-align: center;
+		font-family: "Nunito Variable", sans-serif;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: -0.03rem;
+	}
+	h2#working {
+		font-family: "Roboto";
+		font-size: 2.25rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.045rem;
+	}
+	#section-working h3 {
+		font-family: "Roboto";
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.03rem;
+	}
+	#section-working p {
+		font-family: "Nunito Variable";
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+	h2#about {
+		font-family: "Roboto";
+		font-size: 2.25rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.045rem;
+	}
+	span#member-name {
+		text-align: center;
+		font-family: "Roboto";
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: -0.03rem;
+	}
+	h2#contact {
+		font-family: "Roboto";
+		font-size: 2.25rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.045rem;
+	}
+	form label {
+		text-align: center;
+		font-family: "Roboto";
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: -0.02rem;
+	}
+	span#subtitle-footer {
+		color: #bc6c25;
+		font-family: "Montserrat Variable", "Verdana", sans-serif;
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: -0.00875rem;
+		text-transform: capitalize;
+	}
+</style>
